@@ -1,14 +1,18 @@
 const displayEl = document.querySelector("#display");
-let screen = [];
 function appendToDisplay(input) {
-    screen.push(input);
+    // screen.push(input);
     displayEl.value += input;
-    console.log(screen);
 }
 
 function clearDisplay() {
     displayEl.value = "";
-    screen = [];
 }
 
-function calculateResult() {}
+function calculateResult() {
+    debugger;
+    if (displayEl.value.includes("/0")) {
+        displayEl.value = "Division by zero is not allowed";
+    } else {
+        displayEl.value = eval(displayEl.value);
+    }
+}
